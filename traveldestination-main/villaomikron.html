@@ -16,6 +16,54 @@
         <link href="css/styles.css" rel="stylesheet" />
 
         <style>
+
+
+.containerhover {
+  position: relative;
+  width: 50%;
+}
+
+.imagehover {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 110%;
+  height:110%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.containerhover:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
             .omicontainer {
               display: flex;
               align-items: center; 
@@ -28,7 +76,33 @@
              
             }
            
-           
+           * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  background-color: black;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div.containerUL {
+  text-align: center;
+  
+}
+
+ul.myUL {
+  display: inline-block;
+  text-align: left;
+}
               </style>
     </head>
     <body id="page-top">
@@ -55,8 +129,9 @@
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <h1 class="mx-auto my-1 text-uppercase">Villa Omikron</h1>
-                        <h2 class="text-white-50 mx-auto mt-6 mb-7">This charming Villa in Santorini is located at the exquisite area of Firostefani, and it offers to its guests mesmerizing views to the Aegean Sea, as well as the famous colorful sunset.
+                        <h2 class="text-white-50 mx-auto mt-6 mb-7" style="display: contents;">This charming Villa in Santorini is located at the exquisite area of Firostefani, and it offers to its guests mesmerizing views to the Aegean Sea, as well as the famous colorful sunset.
                         </h2>
+                        <br>
                         <a class="btn btn-primary" href="#about">Discover</a>
                     </div>
                 </div>
@@ -70,7 +145,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">Overview</h2>
-                        <p class="text-white-50">
+                        <p class="text-white-50" >
                             
 An inspiration from the traditional cave dwellings of Santorini, this secluded cave-like co coon features great luxury detailing, custom-made furniture and stylish interior.<br>
                             <a href="#moreinfo">More IInfo</a>
@@ -78,7 +153,7 @@ An inspiration from the traditional cave dwellings of Santorini, this secluded c
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+                
             </div>
         </section>
 
@@ -87,30 +162,31 @@ An inspiration from the traditional cave dwellings of Santorini, this secluded c
                 <div class="row gx-4 gx-lg-5 justify-content-center>
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">More Info</h2>
-                        <p class="text-white-50">
+                        <p class="text-white-50" style="justify-content: center;">
                             
                             The intimate veranda with the spa tub are the finishing touches to an utterly indulgent holiday. Created with romance and relaxation in mind, Villa Omikron, an oasis of calmness, combines stunning panoramic views with comfort, custom-made furniture and elegant decor giving a luxurious feel to your getaway. As you enter you are greeted by a spacious living room with a dining area that leads you to the king size bedroom which is discreetly secluded.
 
                             A fully equipped kitchen comes on your right with a discreet arch opening. As you walk deeper into the cave the black Vasaltis marble freestanding bathtub, a generous walk in shower and the double sink relish the serene feel of this gracious suite. The highlight however, is the serene veranda that features a spa tub, which appears to merge with the Caldera a thousand feet below and offers generously magnificent views of the deep blue Aegean Sea.<br>
                             <a href="#villafacilities">Villa Facilities</a>
+                            <br>
                             <a href="#omikron">Photo Gallery</a>
                             
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+                
             </div>
         </section>
             
         
-        <section class="about-section text-lg-left" id="villafacilities">
+        <section class="about-section text-lg-center" id="villafacilities">
           <!--- <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">--> 
                         <h2 class="text-white mb-4">Villa Facilities</h2>
                        <!-- <p class="text-white mb-4">-->
-                        
-                            <ul class="text-white mb-4">
+                        <div class="containerUL">
+                            <ul class="myUL" style="color: white;">
                                 <li>Indoor area 64sqm</li>
                                 <li>Outdoor Area 34sqm</li>
                                 <li>Outdoor spa tub with stunning Caldera views</li>
@@ -120,7 +196,7 @@ An inspiration from the traditional cave dwellings of Santorini, this secluded c
                                 <li>Dining area</li>
                                 <li>Bathroom details: Walk in Shower, Freestanding marble bathtub, <br>Double sink, Bathroom amenities, Olive Era full pack amenities</li>
                             </ul>
-                            
+                        </div>
                             
                             
                       <!--   </p>-->
@@ -129,26 +205,80 @@ An inspiration from the traditional cave dwellings of Santorini, this secluded c
                 <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
             </div>-->
         </section>
-      
-        <section class="about-section text-lg-left" id="omikron">
-<div class="omicontainer">
-    <div class="omiimage"> <img src="https://www.voravillas.com/wp-content/uploads/2020/05/PANORAMIC-2-2.jpg" alt="This is my image." height="200px"/> </div> 
-    <div class="omiimage"> <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Terrace_01.jpg" alt="This is my second image." height="200px"/> </div> 
-   <div class="omiimage"> <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Terrace_02.jpg" alt="My third image." height="200px"/> </div> 
-   <div class="omiimage1"> <img src="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-EXTERIOR-5-2.jpg" alt="My third image." height="200px"/> </div> 
-   
-  </div>
-
-<br>
-</section>
- 
-<section class="about-section text-lg-left" id="omikron">
-    <div class="omicontainer1">
-    <div class="omiimage1" > <img src="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-EXTERIOR-4-2.jpg" alt="My third image." height="200px" /> </div> 
+        <section  id="omikron">
+        <div class="row">
+            <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/PANORAMIC-2-2.jpg">
+                <img src="https://www.voravillas.com/wp-content/uploads/2020/05/PANORAMIC-2-2.jpg" alt="Snow" style="width:200%" height="300px">
+            </a>  
+            </div>
+              <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Terrace_01.jpg">
+                <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Terrace_01.jpg" alt="Forest" style="width:100%" height="300px">
+            </a> 
+            </div>
+              <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bedroom_01.jpg">
+                <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bedroom_01.jpg" alt="Mountains" style="width:100%" height="300px">
+            </a>
+        </div>
+                
+           <div class="column">
+            <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-EXTERIOR-5-2.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-EXTERIOR-5-2.jpg" alt="Snow" style="width:200%" height="300px">
+            </a>
+            </div>
+            <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Lounge_01-1.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Lounge_01-1.jpg" alt="Forest" style="width:100%" height="300px">
+            </a>
+        </div>
+            <div class="column">
+                <a target="_blank"  href=>
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bedroom_01.jpg" alt="Mountains" style="width:100%" height="300px">
+            </a>
+        </div>            
+        
+        <div class="column">
+            <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bedroom_02.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bedroom_02.jpg" alt="Snow" style="width:100%" height="300px">
+            </a>
+            </div>
+            <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Lounge_04.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Lounge_04.jpg"  alt="Forest" style="width:100%" height="300px">
+            </a>
+         </div>
+            <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Kitchen_01-1.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Kitchen_01-1.jpg" alt="Mountains" style="width:100%" height="300px">
+            </a>
+        </div>
+          
+            <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-BED-2.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-BED-2.jpg"  alt="Snow" style="width:100%" height="300px">
+            </a>
+            </div>
+            <div class="column">
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bathroom_02.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Bathroom_02.jpg" alt="Forest" style="width:100%" height="300px">
+            </a>
+            </div>
+            <div class="column">
+            </a>
+                <a target="_blank"  href="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-EXTERIOR-ANGLE-1.jpg">
+              <img src="https://www.voravillas.com/wp-content/uploads/2020/05/OMIKRON-EXTERIOR-ANGLE-1.jpg"alt="Mountains" style="width:100%" height="300px">
+            </a>
+        </div>
     
-</div>
-</section>
-    
+           <!-- <div class="column">
+                <img src="https://www.voravillas.com/wp-content/uploads/2020/05/k-studio_Vora_O-Terrace_03.jpg" alt="Mountains" style="width:100%" height="300px">
+              </div>
+      -->
+             
+          </div>
+        </section>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
